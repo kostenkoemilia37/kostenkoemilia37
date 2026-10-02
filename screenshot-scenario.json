@@ -1,0 +1,13 @@
+{
+  "notes": "tapFrac is normalised SCREEN space measured from the TOP. Two kinds of tap appear here and they are computed differently. UI taps (PLAY, RUN PULSE) come from real RectTransform anchors over the 1242x2688 canvas WITH the AspectRatioFitter correction: SafeArea fills the capture screen, but its child AspecterSA is FitInParent at 1242/2688 = 0.46205 while the Unity AVD is 1080x2400 = 0.45, so the UI layer renders 1080 x 2337.4, letterboxed 31.3 px top and bottom. A UI rect at fraction u of the panel therefore lands at 0.013043 + u * 0.973913 of the screen from the bottom, and tapFrac y is one minus that: PLAY u=0.235 -> 0.7581, RUN PULSE u=0.125 -> 0.8652. WORLD taps (the gear rings) need NO correction - the camera fills the screen. With orthographicSize 5 on a 0.45 aspect the half width is 2.25, the board radius is min(2.25*0.86, 5*0.40) = 1.935 and the board centre sits at y = 0.55. A ring tap at radius k*R lands at world y = 0.55 + k*1.935 and screen y = (5 - worldY) / 10: outer band k=0.92 -> worldY 2.330 -> 0.2670, inner band k=0.37 -> worldY 1.266 -> 0.3734. Both are comfortably inside their radial bands (outer 0.76..1.08, inner 0.24..0.50), so the tap router cannot pick the wrong ring. The flow is deterministic despite the seeded generator: section 1 is built so the middle ring starts aligned and the outer and inner rings owe exactly one tap each, which is why outer -> inner -> RUN PULSE always opens it; every later section is built owing at least three taps in total, so the three RUN PULSE presses that follow are three guaranteed misses and the run ends on the sealed-vault card at about eighteen seconds. There is no clock anywhere in this game, so nothing can resolve while the capture is between steps.",
+  "steps": [
+    { "waitLoader": true, "wait": 3, "shot": "01_MenuScreen" },
+    { "tapFrac": [0.500, 0.7581], "label": "PLAY", "waitLoader": true, "wait": 6, "shot": "02_GameScreen_idle" },
+    { "tapFrac": [0.500, 0.2670], "label": "GEAR_OUTER", "wait": 1.4, "shot": "03_GameScreen_ring_turned" },
+    { "tapFrac": [0.500, 0.3734], "label": "GEAR_INNER", "wait": 1.4 },
+    { "tapFrac": [0.500, 0.8652], "label": "RUN PULSE", "wait": 2.6, "shot": "04_GameScreen_section_open" },
+    { "tapFrac": [0.500, 0.8652], "label": "RUN PULSE", "wait": 1.6, "shot": "05_GameScreen_check_failed" },
+    { "tapFrac": [0.500, 0.8652], "label": "RUN PULSE", "wait": 1.6 },
+    { "tapFrac": [0.500, 0.8652], "label": "RUN PULSE", "wait": 3.5, "shot": "06_LosePop" }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "style": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette",
+  "palette": [
+    "#12151E",
+    "#1A1F2E",
+    "#232A3C",
+    "#2A3145",
+    "#EFC24E",
+    "#A8832A",
+    "#D9364E",
+    "#6546B5",
+    "#30B9AA",
+    "#F5EBD8"
+  ],
+  "notes": "One art style, repeated word for word at the head of every prompt (rule F.1c). Every mechanical sprite declares its orientation in words (rule C.8), and the rotationally symmetric ones say so explicitly so nothing is mirrored by accident. Only sprite_pulse_trail, sprite_target_gate and icon_back are directional: the first two point DOWN because the code places them on the rim and rotates them to aim at the core, and icon_back points LEFT. The sprites the code TINTS at runtime - sprite_notch_marker, sprite_target_gate, sprite_key_token, sprite_section_pip, sprite_pulse_trail, sprite_spark_fx - are drawn in pale neutral silver-white with value contrast only, because a tint multiplies: brass art tinted brass turns to mud, and the same token has to read as crimson, amber, violet or teal depending on which key is live. Everything else carries its own colour and is drawn untinted. The three gear rings are HOLLOW so the rings inside them stay visible. sprite_vault_plate carries a 48px nine-slice border in its .meta, so its prompt asks for a uniform riveted rim and a flat centre that survives stretching. Sprites are drawn on whatever backdrop the model likes because the pipeline cuts the background away (rule F.1b). No prompt contains the app name and no sprite carries lettering of any kind (hard rule 1).",
+  "assets": [
+    {
+      "name": "bg_main",
+      "type": "bg",
+      "transparent": false,
+      "target": "Assets/Art/Textures/_BASE/Backgrounds/BG_main.png",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, the face of an enormous steel vault door seen three quarters on, heavy brass banding and rows of rivets across it, a cold teal rim light grazing the top edge, deep graphite shadow gathering in the corners, the middle of the frame kept calm and low contrast as a safe area for a hero emblem, the lower third darkened so buttons read over it, vertical 9:19.5 portrait composition, no text, no letters, no logos, no watermark, not a photo, not photorealistic",
+      "orientation": "vertical portrait, door facing the viewer"
+    },
+    {
+      "name": "bg_game",
+      "type": "bg",
+      "transparent": false,
+      "target": "Assets/Art/Textures/_BASE/Backgrounds/BG_game.png",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, the inside of a riveted steel vault shaft running the full height of the frame, a soft cone of light from above, plain flat plating on both walls, the whole centre deliberately empty and very low contrast so gameplay pieces read on top of it, the top quarter and the bottom sixth darkened so a HUD and a button stay legible, vertical 9:19.5 portrait composition, no text, no letters, no logos, no watermark, not a photo, not photorealistic",
+      "orientation": "vertical portrait, looking down the shaft"
+    },
+    {
+      "name": "sprite_vault_plate",
+      "type": "sprite",
+      "transparent": true,
+      "target": "Assets/Art/Sprites/sprite_vault_plate.png",
+      "orientation": "square, flat-on, four-way symmetric, no flip",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, one single square dark steel backing plate with a uniform brass rivet border running along all four edges and identical corners, the centre flat brushed graphite with almost no detail so it survives being stretched, seen perfectly flat-on, centred, whole subject in frame, isolated single subject, no other objects, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "sprite_gear_outer",
+      "type": "sprite",
+      "transparent": true,
+      "target": "Assets/Art/Sprites/sprite_gear_outer.png",
+      "orientation": "top-down, flat-on, rotationally symmetric, hollow centre, no flip",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, one single wide polished brass gear ring with twelve evenly spaced teeth around its outside, the middle completely hollow and empty so whatever sits inside stays visible, engraved concentric grooves on the band, seen perfectly flat-on from above, rotationally symmetric, centred, whole subject in frame, isolated single subject, no other objects, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "sprite_gear_mid",
+      "type": "sprite",
+      "transparent": true,
+      "target": "Assets/Art/Sprites/sprite_gear_mid.png",
+      "orientation": "top-down, flat-on, rotationally symmetric, hollow centre, no flip",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, one single narrow darkened bronze gear ring with twelve evenly spaced teeth, a slimmer band than a heavy gear, the middle completely hollow and empty, fine engraved hatching on the band, seen perfectly flat-on from above, rotationally symmetric, centred, whole subject in frame, isolated single subject, no other objects, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "sprite_gear_inner",
+      "type": "sprite",
+      "transparent": true,
+      "target": "Assets/Art/Sprites/sprite_gear_inner.png",
+      "orientation": "top-down, flat-on, rotationally symmetric, hollow centre, no flip",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, one single polished steel gear ring with twelve evenly spaced teeth and a thin brass inlay running round its band, the middle completely hollow and empty, seen perfectly flat-on from above, rotationally symmetric, centred, whole subject in frame, isolated single subject, no other objects, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "sprite_core_lock",
+      "type": "sprite",
+      "transparent": true,
+      "target": "Assets/Art/Sprites/sprite_core_lock.png",
+      "orientation": "top-down, flat-on, symmetric, no flip",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, one single hexagonal vault lock core, a heavy brass shell with a narrow glowing violet slit across its middle, small bolt heads at the corners, seen perfectly flat-on from above, symmetric, centred, whole subject in frame, isolated single subject, no other objects, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "sprite_notch_marker",
+      "type": "sprite",
+      "transparent": true,
+      "target": "Assets/Art/Sprites/sprite_notch_marker.png",
+      "orientation": "flat-on, four-way symmetric, no flip",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, one single small faceted diamond shaped alignment stud drawn in PALE NEUTRAL SILVER WHITE with shading only, no strong hue anywhere so it can be tinted, a bright polished centre and a darker bevelled edge, seen perfectly flat-on, symmetric, centred, whole subject in frame, isolated single subject, no other objects, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "sprite_target_gate",
+      "type": "sprite",
+      "transparent": true,
+      "target": "Assets/Art/Sprites/sprite_target_gate.png",
+      "orientation": "nose pointing DOWN, left-right symmetric",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, one single chevron shaped gate bracket with its point aimed straight DOWN toward the bottom of the frame and a glowing bar across its top, drawn in PALE NEUTRAL SILVER WHITE with shading only, no strong hue anywhere so it can be tinted, left-right symmetric, centred, whole subject in frame, isolated single subject, no other objects, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "sprite_key_token",
+      "type": "sprite",
+      "transparent": true,
+      "target": "Assets/Art/Sprites/sprite_key_token.png",
+      "orientation": "flat-on, six-way symmetric hexagon, no flip",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, one single hexagonal key token with a bevelled rim and a glowing core, drawn in PALE NEUTRAL SILVER WHITE with shading only, no strong hue anywhere so it can be tinted, seen perfectly flat-on, symmetric, centred, whole subject in frame, isolated single subject, no other objects, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "sprite_section_pip",
+      "type": "sprite",
+      "transparent": true,
+      "target": "Assets/Art/Sprites/sprite_section_pip.png",
+      "orientation": "flat-on, symmetric, no flip",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, one single small round indicator stud with a raised bevelled rim and a flat glowing face, drawn in PALE NEUTRAL SILVER WHITE with shading only, no strong hue anywhere so it can be tinted, seen perfectly flat-on, symmetric, centred, whole subject in frame, isolated single subject, no other objects, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "sprite_pulse_trail",
+      "type": "sprite",
+      "transparent": true,
+      "target": "Assets/Art/Sprites/sprite_pulse_trail.png",
+      "orientation": "bright head at the BOTTOM, tail trailing UP, left-right symmetric",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, one single tapered energy streak with its bright rounded head at the BOTTOM of the frame and its thin tail trailing up to the top, drawn in PALE NEUTRAL SILVER WHITE with shading only, no strong hue anywhere so it can be tinted, left-right symmetric, centred, whole subject in frame, isolated single subject, no other objects, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "sprite_spark_fx",
+      "type": "sprite",
+      "transparent": true,
+      "target": "Assets/Art/Sprites/sprite_spark_fx.png",
+      "orientation": "flat-on, four-way symmetric, no flip",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, one single four point spark flare with a bright core and four tapering rays, drawn in PALE NEUTRAL SILVER WHITE with shading only, no strong hue anywhere so it can be tinted, symmetric, centred, whole subject in frame, isolated single subject, no other objects, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "sprite_mark_ring",
+      "type": "sprite",
+      "transparent": true,
+      "target": "Assets/Art/Sprites/sprite_mark_ring.png",
+      "orientation": "top-down, flat-on, symmetric, hollow centre, no flip",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, one single abstract emblem made of a heavy polished brass ring with a single square notch cut out of its band and a thin glowing teal arc sweeping round the outside, the middle completely hollow and empty, purely abstract with no lettering of any kind, seen perfectly flat-on, centred, whole subject in frame, isolated single subject, no other objects, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "icon_back",
+      "type": "sprite",
+      "transparent": true,
+      "target": "Assets/Art/Sprites/icon_back.png",
+      "orientation": "arrow head pointing LEFT",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, one single chunky brass arrow icon with its head pointing to the LEFT of the frame, flat game UI icon with a soft bevel, centred, whole subject in frame, isolated single subject, no other objects, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "icon_pause",
+      "type": "sprite",
+      "transparent": true,
+      "target": "Assets/Art/Sprites/icon_pause.png",
+      "orientation": "flat-on, left-right symmetric, no flip",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, one single pause icon made of two identical thick upright brass bars side by side with an even gap between them, flat game UI icon with a soft bevel, symmetric, centred, whole subject in frame, isolated single subject, no other objects, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "icon_close",
+      "type": "sprite",
+      "transparent": true,
+      "target": "Assets/Art/Sprites/icon_close.png",
+      "orientation": "flat-on, four-way symmetric, no flip",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, one single close icon made of two thick brass bars crossing at the centre in an even X, flat game UI icon with a soft bevel, symmetric, centred, whole subject in frame, isolated single subject, no other objects, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "icon_gear_btn",
+      "type": "sprite",
+      "transparent": true,
+      "target": "Assets/Art/Sprites/icon_gear_btn.png",
+      "orientation": "top-down, flat-on, rotationally symmetric, no flip",
+      "prompt": "dark burnished steel and polished brass game art, engraved metal, cool neon rim light, painted illustration, high contrast, clean silhouette, one single settings cog icon in polished brass with eight evenly spaced teeth and a round hole through the middle, flat game UI icon with a soft bevel, seen perfectly flat-on, rotationally symmetric, centred, whole subject in frame, isolated single subject, no other objects, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    }
+  ]
+}
